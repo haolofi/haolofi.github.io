@@ -17,7 +17,7 @@
 function loginFunction () {
         let username = document.getElementById("myText").value;
   let currentUser = userArray.filter( user=> user.username == username)
-  currentUser.length ? window.open("https://raw.githubusercontent.com/m-mourouh/Humburger-Menu/master/index.html", '_self'): alert("sai key")
+  currentUser.length ? window.open("https://haolofi.github.io", '_self'): alert("sai key")
 }
 
 const button = document.getElementById("button");
