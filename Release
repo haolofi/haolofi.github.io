@@ -1,8 +1,0 @@
-Origin: Hao Lofi
-Label: lofi
-Suite: stable
-Version: 1.0
-Codename: ios
-Architectures: iphoneos-arm
-Components: main
-Description: Hi my name is HaoLofi
