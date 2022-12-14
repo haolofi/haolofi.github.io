@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+.name {
+position: absolute;
+top: 13.3%;
+left: 10%;
+font-size: 12pt;
+font-family: "Arial Rounded MT Bold";
+color: rgb(191, 191, 191);
+}
+
+section {
+  width: 100%;
+  padding: 0 7%;
+  display: table;
+  margin: 0;
+  max-width: none;
+  background-color: #373B44;
+  height: 100vh;
+  
+  &:nth-of-type(2n) {
+    background-color: #FE4B74;
+  }
+}
+
+.intro {
+  height: 90vh;
+}
+
+input[type=checkbox]{
+ visibility: hidden;
+ vertical-align:middle; margin-bottom:2px;
+ cursor: pointer;
+ position: relative;
+ width: 24px;
+ height: 24px;
+}
+input[type=checkbox]::after{
+ position: absolute;
+ top: 0;
+ margin-top:2px;
+ width: 14px; height: 14px;
+ border: 1px solid #686868;
+ border-radius: 3px;
+ background-color: rgba(0,0,0,0);
+ display: inline-block;
+ visibility: visible;
+ text-align: center;
+ content: ' ';
+}
+input[type=checkbox]:checked::after{
+ content: "✓";
+ color: #FFF;
+ border-color: #B8B8B8;
+ background-color: #4498F7;
+ font-size: 12px;
+ font-weight: bold;
+}
+
+
+[type="checkbox"]:checked,
+[type="checkbox"]:not(:checked) {
+    position: absolute;
+    left: -9999px;
+}
+[type="checkbox"]:checked + label,
+[type="checkbox"]:not(:checked) + label
+{
+    position: relative;
+    padding-left: 28px;
+    cursor: pointer;
+    line-height: 20px;
+    display: inline-block;
+    color: black;
+    font-size:13px;
+}
+[type="checkbox"]:checked + label:before,
+[type="checkbox"]:not(:checked) + label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 18px;
+    height: 18px;
+    border: 1px solid black;
+    background: #fff;
+    border-radius:4px;
+}
+[type="checkbox"]:checked + label:after {
+    content: '';
+    width: 5px;
+    height: 10px;
+    border: solid #6987bd;
+    border-width: 0px 3px 3px 0;
+    position: absolute;
+    top: 2px;
+    left: 6px;
+    -webkit-transition: all 0.1s ease;
+    transition: all 0.1s ease;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+</style>
+    <title>For Perky's Custom H5</title>
+</head>
+
+<body>
+    <div id="square">
+    <h3>Call of duty việt nam 1.8.36 | telegram @hao1503 zalo 0846095579</h3>
+        <div>
+            <span>Icon Border Radius</span>
+            <span id="numvalue1">15.0</span><br>
+            <input class="range" type="range" id=slider1 value="15" min="0" max="15" step="0.1"/>
+        </div>
+
+        <div>
+&nbsp
+<input type="checkbox" id="c8" onclick="scope()"><label for="c8">Wall hack</label>
+
+        </div>
+    </div>
+
+    <script>
+        // Custom icon
+        function iconChangeGIF()
+        {
+            // Currently doesn't work
+            var newLogo = prompt("Enter GIF URL");
+            setButtonGif(newLogo);  
+        }
+
+
+            setButtonGif("https://media.discordapp.net/attachments/952099629837738024/1050102157250150470/cachedGif.gif")
+        
+        // Custom Border Radius
+        function iconBorderRadius() 
+        {
+            numvalue1.innerText = Number(element1.value).toFixed(1);
+            setButtonRadius('15'); 
+        }
+setButtonRadius('15'); 
+
+        element1 = document.getElementById("slider1");
+        element1.addEventListener("input", iconBorderRadius);
+    </script>
+
+    <style>
+        body
+        {
+            font-family: 'Copperplate', Fantasy;
+        }
+
+        #square 
+        {
+            width: 400px;
+            height: 500px;
+            background:#6987bd;
+        }
+    </style>
+</body>
+</html>
