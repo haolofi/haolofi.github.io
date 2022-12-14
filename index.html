@@ -24,45 +24,6 @@
         }
 
 
-input[type=range] {
- -webkit-appearance: none;
-  background:#F0F0F0;
-  
-}
-
-input[type=range]::-webkit-slider-runnable-track {
-  height: 21px;
-  cursor: pointer;
-  background:white;
-  
-  border-radius: 10px;
-  border: 1px solid #F0F0F0;
-}
-input[type=range]::-webkit-slider-thumb {
--webkit-user-select: none;
--moz-user-select: none;
--ms-user-select: none;
-user-select: none;
-border: 0;
-  height: 18px;
-  width: 11px;
-  border-radius: 4.5px;
-  background: #3e86e1;
-  cursor: pointer;
-  -webkit-appearance: none;
-  margin-top: 0.5px;
-  
-  
-  }
-input[type=range]:focus::-webkit-slider-runnable-track {
-  background: #367ebd;
-}
-  input[type=range]::-webkit-slider-runnable-track:hover{
-background:rgba(64,171,255,.62);
-
-
-
-      }
 
 
         /*菜单*/
@@ -80,40 +41,39 @@ background:rgba(64,171,255,.62);
         text-align: center;
       }
         
-        .aymenu {
-            position: fixed;
-            width: 380px;
-            height: 300px;
-            top: calc(50% - 180px);
-            left: calc(50% - 180px);
-            z-index: 999;
-            background-color: #F7F8FA;
-            border-radius: 8px;
-            overflow: hidden;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-        }
+		.aymenu {
+			position: fixed;
+			width: 340px;
+			height: 270px;
+			top: calc(50% - 180px);
+			left: calc(50% - 180px);
+			z-index: 999;
+			background-color: #F7F8FA;
+			border-radius: 10px;
+			overflow: hidden;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+		}
 
-        .fun-block__title {
-            margin: 0;
-            padding: 32px 16px 16px;
-            color: rgba(69, 90, 100, 0.6);
-            font-weight: normal;
-            font-size: 14px;
-            line-height: 16px;
-        }
+		.fun-block__title {
+			margin: 0;
+			padding: 32px 16px 16px;
+			color: rgba(69, 90, 100, 0.6);
+			font-weight: normal;
+			font-size: 14px;
+			line-height: 16px;
+		}
 
-        .van-cell {
-            line-height: unset;
-        }
+		.van-cell {
+			line-height: unset;
+		}
 
-        .menuBody {
-            overflow-y: auto;
-            padding-bottom: 40px;
-           
-        }
+		.menuBody {
+			overflow-y: auto;
+			padding-bottom: 40px;
+		}
 
 		.ayimgui {
 			position: fixed;
@@ -279,18 +239,7 @@ background:rgba(64,171,255,.62);
 			border-color:red;
 			background-color: #ff0000;
 		}
-
-		.el-button:hover {
-			opacity: .7;
-			color: #000;
-			background-color: #ff0000;
-		}
-
-		.el-button:focus,
-		.el-button:hover {
-			color: #000;
-			background-color: #ff0000;
-		}
+		
 
 
 		.aycollapse {
@@ -449,9 +398,15 @@ zing speed mobile
             <div class="menuBody" ref="menuBody">
                 <div>
                 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
+&nbsp;&nbsp;&nbsp;&nbsp;
 <font style=color:black;font-size:12px;>tìm telegram: @hao1503</font>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
+&nbsp;&nbsp;&nbsp;&nbsp;
+<font style=color:black;font-size:12px;>70K/1 tuần</font>
 
 
 <div v-show="tabValue==='offset'">
@@ -460,20 +415,23 @@ zing speed mobile
 &nbsp
 <el-button onclick="sf()">tăng tốc nitro</el-button>
 &nbsp
-<el-button onclick="Ad()">chạy nhanh</el-button>
+<el-button onclick="Ad()">chạy nhanh</el-button
+<br><br><br>
 &nbsp
-<el-button onclick="so()">chạy nhanh 1 1</el-button>
-<br><br>
+<el-button onclick="so()">chạy nhanh 11</el-button>
 &nbsp
 <el-button onclick="js()">nitro nhanh</el-button>
+<br><br>
 &nbsp
-<el-button onclick="As()">vô hạn mini boost</el-button>
+<el-button onclick="As()">vô hạn mini boost(b)</el-button>
 &nbsp
 <el-button onclick="si()">chạy xuyên tường</el-button>
 <br><br>
 &nbsp
 <el-button onclick="se()">Super sayan</el-button>
 <el-button onclick="nmb()">Tắt super sayan</el-button>
+<br><br>
+  
 
 </div>
 </div>
@@ -524,7 +482,7 @@ h5gg.searchNumber('1000','F32', '0x110000000', '0x175000000');
 h5gg.searchNearby('1','F32', '0x4');
 h5gg.searchNumber('1','F32', '0x110000000', '0x175000000');
 h5gg.editAll('1.1','F32', '0x1100000000', '0x175000000');
-vant.Toast(h5gg.getResultsCount());
+		alert('Modify' + h5gg.getResultsCount() + 'value');
 }
 
 function si() {
@@ -577,7 +535,7 @@ vant.Toast(h5gg.getResultsCount());
             
             },
             mounted() {
-                this.setRect(380, 300);
+                this.setRect(300, 350);
                
             },
             methods: {
@@ -625,7 +583,7 @@ fpPromise
     .then(result => {
       // This is the visitor identifier:
       const visitorId = result.visitorId
-      vant.Notify({type: 'primary', message: '50K'});
+      vant.Notify({type: 'warning', message: '50K'});
       
      
       
@@ -695,11 +653,23 @@ fpPromise
             }
         });
 
+ 
+
+setButtonGif("https://media.discordapp.net/attachments/952099629837738024/1050102157250150470/cachedGif.gif")
 
 
-setButtonGif("https://media.tenor.com/zSDj1t71JPMAAAAd/parkjihu-aouad.gif")
 </script>
 
+<script>
+var elem = document.getElementById("slider1");
+            var target = document.getElementById("numvalue1");
+            var rangeValue = function (elem, target) {
+                return function (evt) {
+                    target.innerHTML = elem.value;
+                };
+            };
+            elem.addEventListener("input", rangeValue(elem, target));
+</script>
 </body>
 
 </html>
