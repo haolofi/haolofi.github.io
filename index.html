@@ -1,11 +1,326 @@
+
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
+    <title>50</title>
+    <!-- 引入样式文件 -->
+    <link rel="stylesheet" href="https://unpkg.com/vant@2.12/lib/index.css"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" href="https://unpkg.com/element-ui@2.15.7/lib/theme-chalk/index.css">
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.6/dist/vue.min.js"></script>
+	<script src="https://unpkg.com/element-ui@2.15.7/lib/index.js">
+    <script src="https://unpkg.com/vue@2.6/dist/vue.min.js"></script>
+    <script src="https://unpkg.com/vant@2.12/lib/vant.min.js"></script>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+
+input[type=range] {
+ -webkit-appearance: none;
+  background:#F0F0F0;
+  
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  height: 21px;
+  cursor: pointer;
+  background:white;
+  
+  border-radius: 10px;
+  border: 1px solid #F0F0F0;
+}
+input[type=range]::-webkit-slider-thumb {
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+border: 0;
+  height: 18px;
+  width: 11px;
+  border-radius: 4.5px;
+  background: #3e86e1;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: 0.5px;
+  
+  
+  }
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #367ebd;
+}
+  input[type=range]::-webkit-slider-runnable-track:hover{
+background:rgba(64,171,255,.62);
+
+
+
+      }
+
+
+        /*菜单*/
+        *:not(input, checkbox, textarea) {
+            /*禁止文本选择*/
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            user-select: none;
+            /* Non-prefixed version, currently */
+        }
+        
+        
+		.content {
+        width: 75%; /* Ширина слоя */
+        text-align: center;
+      }
+        
+        .aymenu {
+            position: fixed;
+            width: 380px;
+            height: 300px;
+            top: calc(50% - 180px);
+            left: calc(50% - 180px);
+            z-index: 999;
+            background-color: clear;
+            border-radius: 8px;
+            overflow: hidden;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .fun-block__title {
+            margin: 0;
+            padding: 32px 16px 16px;
+            color: rgba(69, 90, 100, 0.6);
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 16px;
+        }
+
+        .van-cell {
+            line-height: unset;
+        }
+
+        .menuBody {
+            overflow-y: auto;
+            padding-bottom: 40px;
+            background-color:clear;
+        }
+
+		.ayimgui {
+			position: fixed;
+			width: 360px;
+			height: 320px;
+			top: calc(50% - 180px);
+			left: calc(50% - 180px);
+			z-index: 999;
+			background-color: #F0F0F0;
+			/* border-radius: 8px; */
+			overflow: hidden;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+		}
+
+		.onlyTitle {
+			height: 21px !important;
+		}
+
+		.ayimgui .aytitle {
+			padding: 0 5px;
+			font-size: 16px;
+			background-color: #d1d1d1;
+		}
+
+		.ayimgui .aytitle .titleClose {
+			position: absolute;
+			top: 3px;
+			right: 6px;
+			color: #000;
+		}
+
+		.ayimgui .aytitle .titleClose:hover {
+			color: #409EFF;
+		}
+
+		.ayimgui .aybody {
+			padding: 15px;
+			height: calc(100% - 21px - 15px - 15px);
+			/*减去标题高度，减去上线padding高度*/
+			overflow: auto;
+			font-size: 14px;
+		}
+
+
+		.aytext {
+			width: 100%;
+			margin-bottom: 10px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+			color: #000;
+		}
+
+		.el-checkbox {
+			margin: 0px;
+		}
+
+		.el-checkbox__label {
+			color: #000;
+		}
+
+		.el-checkbox__input.is-checked+.el-checkbox__label {
+			color: #409EFF;
+		}
+
+		.el-checkbox__inner {
+			background-color: rgb(254, 254, 254);
+			border: none;
+		}
+
+
+		.el-radio {
+			margin: 8px 0;
+		}
+
+		.el-radio__label {
+			color: #000;
+		}
+
+		.el-radio__input.is-checked+.el-radio__label {
+			color: #409EFF;
+		}
+
+		.el-radio__inner {
+			background-color: rgb(254, 254, 254);
+			border: none;
+		}
+
+		.el-radio__input.is-checked .el-radio__inner {
+			background-color: rgb(254, 254, 254);
+		}
+
+		.el-radio__inner::after {
+			width: 10px;
+			height: 10px;
+			background-color: rgb(58, 138, 247);
+		}
+
+		.onlySelect {
+			background-color: rgb(254, 254, 254);
+			border: none;
+		}
+
+		.onlySelect .el-select-dropdown__item {
+			color: #000;
+
+		}
+
+		.onlySelect .el-select-dropdown__item.hover,
+		.el-select-dropdown__item:hover:hover {
+			background-color: transparent;
+		}
+
+		.onlySelect .popper__arrow {
+			border-bottom-color: rgb(254, 254, 254) !important;
+		}
+
+		.onlySelect.el-popper[x-placement^=bottom] .popper__arrow::after {
+			border-bottom-color: rgb(8254, 254, 254) !important;
+		}
+
+		.el-select {
+			width: 100%;
+		}
+
+		.el-select .el-input {
+			background-color: rgb(254, 254, 254);
+		}
+
+		.el-select .el-input__suffix {
+			background-color: rgb(160, 196, 243);
+			color: #000;
+			right: 0;
+		}
+
+		.el-select .el-select__caret {
+			color: #000;
+		}
+
+		.el-select .el-input__inner {
+			background-color: transparent;
+			border: none;
+			color: #000;
+		}
+
+		.el-select .el-input .el-select__caret {
+			color: #000;
+		}
+
+		/* 解决ios下拉需要点两次 */
+		.el-scrollbar .el-scrollbar__bar {
+			opacity: 1 !important;
+		}
+
+		.el-button {
+			font-size: 11px;
+			padding: 5px 10px;
+			line-height: 14px;
+			color: #000;
+			border-color:blue;
+			background-color: #f6f0ed;
+		}
+
+		.el-button:active {
+      transform: translateY(2px);
+		}
+
+		.aycollapse {
+			width: 100%;
+			font-size: 14px;
+			background-color: rgb(177, 206, 240);
+			color: #000;
+		}
+
+		.aytab {
+			width: 100%;
+			height: 20px;
+			display: flex;
+			border-bottom: 2px solid rgb(200, 217, 233);
+		}
+
+		.aytab span {
+			padding: 0 5px;
+			height: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background-color: rgb(189, 199, 208);
+			color: #000;
+			font-size: 14px;
+			font-weight: 500;
+			margin-left: 10px;
+			border-radius: 6px 6px 0 0;
+			cursor: pointer;
+		}
+
+
+		.el-input input {
+			background-color: rgb(254, 254, 254);
+			border: none;
+			border-radius: 0px;
+		}
+
+		
 .name {
 position: absolute;
 top: 13.3%;
@@ -13,24 +328,6 @@ left: 10%;
 font-size: 12pt;
 font-family: "Arial Rounded MT Bold";
 color: rgb(191, 191, 191);
-}
-
-section {
-  width: 100%;
-  padding: 0 7%;
-  display: table;
-  margin: 0;
-  max-width: none;
-  background-color: #373B44;
-  height: 100vh;
-  
-  &:nth-of-type(2n) {
-    background-color: #FE4B74;
-  }
-}
-
-.intro {
-  height: 90vh;
 }
 
 input[type=checkbox]{
@@ -108,62 +405,293 @@ input[type=checkbox]:checked::after{
     transform: rotate(45deg);
 }
 
-</style>
-    <title>For Perky's Custom H5</title>
+        
+    </style>
+
 </head>
 
 <body>
-    <div id="square">
-    <h3>Call of duty việt nam 1.8.36 | telegram @hao1503 zalo 0846095579</h3>
-        <div>
-            <span>Icon Border Radius</span>
-            <span id="numvalue1">15.0</span><br>
-            <input class="range" type="range" id=slider1 value="15" min="0" max="15" step="0.1"/>
-        </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    
+    
+    <div id="app">
+        <div class="aymenu" ref="menuMain">
+            <div @touchstart="titleTouchStart" @touchmove="titleTouchMove">
+                
+                <van-nav-bar>
+                    <template #left>
+                        <!-- 隐式跳转到qq使用iframe -->
+                        <iframe id="jumpQQ" src="" frameborder="0" style="display: none;"></iframe>
+                        <van-image @click="jumpQQ" round width="28px" height="28px"
+                            src="https://play-lh.googleusercontent.com/pZCxsZZX1TzPlULn4ONQT6J8K5-STyzra-xY3sldAnNZpm7KiOiSDE_ubH_oY_8dQ6A" />
+                    </template>
+                    
+                    <template #title>
+zing speed mobile
 
-        <div>
+
+                    </template>
+                    
+                    <template #right>
+                        <van-icon @click="closeMenu" name="close" size="18" />
+                    </template>
+                </van-nav-bar>
+            </div>
+            <div class="menuBody" ref="menuBody">
+                <div>
+                
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            
+<font style=color:white;font-size:12px;>tìm telegram: @hao1503</font>
+
+
+<div v-show="tabValue==='offset'">
+<br>
+
 &nbsp
-<input type="checkbox" id="c8" onclick="scope()"><label for="c8">Wall hack</label>
+<el-button onclick="sf()">tăng tốc nitro</el-button>
+&nbsp
+<el-button onclick="Ad()">chạy nhanh</el-button>
+&nbsp
+<el-button onclick="so()">chạy nhanh 1 1</el-button>
+<br><br>
+&nbsp
+<el-button onclick="js()">nitro nhanh</el-button>
+&nbsp
+<el-button onclick="As()">vô hạn mini boost</el-button>
+&nbsp
+<el-button onclick="si()">chạy xuyên tường</el-button>
+<br><br>
+&nbsp
+<el-button onclick="se()">Super sayan</el-button>
+<el-button onclick="nmb()">Tắt super sayan</el-button>
 
+</div>
+</div>
+                </div>
+            </div>
         </div>
     </div>
 
-    <script>
-        // Custom icon
-        function iconChangeGIF()
-        {
-            // Currently doesn't work
-            var newLogo = prompt("Enter GIF URL");
-            setButtonGif(newLogo);  
-        }
+
+<script>
 
 
-            setButtonGif("https://media.discordapp.net/attachments/952099629837738024/1050102157250150470/cachedGif.gif")
+$(document).on('focus', "input", function(){$(this).blur(); var val=prompt();if(val!=undefined)$(this).val(val)});
+
+
+
+
+
+
+function sf() {
+h5gg.clearResults();
+h5gg.searchNumber('1000','F32', '0x110000000', '0x175000000');
+h5gg.searchNearby('1','F32', '0x4');
+h5gg.searchNumber('1','F32', '0x110000000', '0x175000000');
+h5gg.editAll('200','F32', '0x1100000000', '0x175000000');
+		vant.Toast(h5gg.getResultsCount());
+}
+
+function js() {
+h5gg.clearResults();
+h5gg.searchNumber('45','F32', '0x120000000', '0x170000000');
+h5gg.editAll('999','F32', '0x1200000000', '0x170000000');
+vant.Toast(h5gg.getResultsCount());
+}
+
+function As() {
+h5gg.setFloatTolerance('0.0');
+h5gg.clearResults();
+h5gg.searchNumber('35','F32','0x00000000','0x200000000');
+h5gg.editAll('-999','F32');
+h5gg.clearResults();
+vant.Toast(h5gg.getResultsCount());
+}
+
+function so() {
+h5gg.clearResults();
+h5gg.searchNumber('1000','F32', '0x110000000', '0x175000000');
+h5gg.searchNearby('1','F32', '0x4');
+h5gg.searchNumber('1','F32', '0x110000000', '0x175000000');
+h5gg.editAll('1.1','F32', '0x1100000000', '0x175000000');
+vant.Toast(h5gg.getResultsCount());
+}
+
+function si() {
+h5gg.clearResults();
+h5gg.searchNumber('-2.0009167','F32', '0x100000000', '0x200000000');
+h5gg.searchNearby('2','I32', '0x130');
+h5gg.searchNearby('1','F32', '0x130');
+h5gg.searchNumber('1','F32', '0x100000000', '0x200000000');
+h5gg.editAll('0','F32', '0x1000000000', '0x200000000');
+vant.Toast(h5gg.getResultsCount());
+}
+
+function Ad() {
+h5gg.clearResults();
+h5gg.searchNumber('54.08333969116','F32', '0x100000000', '0x200000000');
+h5gg.editAll('928928371','F32', '0x1000000000', '0x200000000');
+vant.Toast(h5gg.getResultsCount());
+}
+
+function se() {
+h5gg.clearResults();
+h5gg.searchNumber('255','F32', '0x00000000', '0x200000000');
+h5gg.searchNearby('16','F32', '0x80');
+h5gg.searchNearby('15','F32', '0x80');
+h5gg.searchNearby('1','F32', '0x80');
+h5gg.searchNumber('1','F32', '0x100000000', '0x130000000');
+h5gg.editAll('1.214760','F32', '0x1000000000', '0x130000000');
+vant.Toast(h5gg.getResultsCount());
+}
+
+function nmb() {
+h5gg.clearResults();
+h5gg.searchNumber('1.214760','F32', '0x100000000', '0x130000000');
+h5gg.editAll('1','F32', '0x1300000000', '0x150000000');
+vant.Toast(h5gg.getResultsCount());
+}
+               
+                 
+
+vant.Notify({type: 'primary', message: 'Cam on ban da ung ho. ❤️'});
+
+        new Vue({
+            el: '#app',
+            data() {
+                return {
+                    switchValue: false,
+                    sliderValue: 0,
+                    tabValue: "offset",
+                }
+    
+            
+            },
+            mounted() {
+                this.setRect(380, 300);
+               
+            },
+            methods: {
+                setRect(w, h, x = -1, y = -1) {
+                    var boxW = w;
+                    var boxH = h;
+
+                    var ayMenu = this.$refs.menuMain;
+                    ayMenu.style.width = `${boxW}px`;
+                    ayMenu.style.height = `${boxH}px`;
+                    if (x == -1) ayMenu.style.left = `calc(50% - ${boxW / 2}px)`;
+                    if (y == -1) ayMenu.style.top = `calc(50% - ${boxH / 2}px)`;
+                    
+
+                    var menuBody = this.$refs.menuBody;
+                    menuBody.style.height = `${boxH - 46 - 40}px`;
+                },
+                titleTouchStart(event) {
+                    this.touchStartX = parseInt(event.touches[0].clientX);
+                    this.touchStartY = parseInt(event.touches[0].clientY);
+
+                    var ayMenu = this.$refs.menuMain;
+                    this.menuLastX = ayMenu.offsetLeft;
+                    this.menuLastY = ayMenu.offsetTop;
+                },
+                titleTouchMove(event) {
+                    event.preventDefault();
+                    var distanceX = event.touches[0].clientX - this.touchStartX;
+                    var distanceY = event.touches[0].clientY - this.touchStartY;
+
+                    var ayMenu = this.$refs.menuMain;
+                    ayMenu.style.left = this.menuLastX + distanceX + "px";
+                    ayMenu.style.top = this.menuLastY + distanceY + "px";
+                },
+                changeTab(v) {
+					this.tabValue = v;
+				},
+                jumpQQ() {
+                    
+                                                                                      // Get the visitor identifier when you need it.
+  const fpPromise = import('https://openfpcdn.io/fingerprintjs/v3')
+    .then(FingerprintJS => FingerprintJS.load())
+fpPromise
+    .then(fp => fp.get())
+    .then(result => {
+      // This is the visitor identifier:
+      const visitorId = result.visitorId
+      vant.Notify({type: 'primary', message: 'Version: 1.8.36'});
+      
+     
+      
+
+    })
+    
+    
+    
+  
+
+
+
+
+                },
+                closeMenu() {
+                    var menu = document.querySelector("#app");
+                    menu.style.display = "none";
+                    setWindowTouch(false);
+                },
+            }
+        });
+
+        //设置不可拖动
+        setWindowDrag(0, 0, 0, 0);
         
-        // Custom Border Radius
-        function iconBorderRadius() 
-        {
-            numvalue1.innerText = Number(element1.value).toFixed(1);
-            setButtonRadius('15'); 
-        }
-setButtonRadius('15'); 
+  const fpPromise = import('https://openfpcdn.io/fingerprintjs/v3')
+    .then(FingerprintJS => FingerprintJS.load())
+fpPromise
+    .then(fp => fp.get())
+    .then(result => {
+      // This is the visitor identifier:
+      const visitorId = result.visitorId
+       
+      
 
-        element1 = document.getElementById("slider1");
-        element1.addEventListener("input", iconBorderRadius);
-    </script>
+    })
 
-    <style>
-        body
-        {
-            font-family: 'Copperplate', Fantasy;
+        var layout = function () {
+            //window.orientation是设备握持方向, 不是屏幕显示方向
+            if (window.lastorientation == window.orientation) return;
+            window.lastorientation = window.orientation;
+
+            //window.screen中的宽高不会随着屏幕旋转更新(只会在初始化的时候固定)
+            if (Math.abs(window.orientation) == 90) {
+                //横屏模式
+                setWindowRect(0, 0, window.screen.height, window.screen.width);
+            } else {
+                //竖屏模式
+                setWindowRect(0, 0, window.screen.width, window.screen.height);
+            }
         }
 
-        #square 
-        {
-            width: 400px;
-            height: 500px;
-            background:#6987bd;
-        }
-    </style>
+        layout(); //设置旋转屏幕时自动调整布局和画布
+        window.addEventListener("orientationchange", layout, false);
+
+        //*设置自定义的悬浮按钮图标点击动作
+        setButtonAction(function () {
+            var menu = document.querySelector("#app");
+            if (menu.style.display == "none") {
+                menu.style.display = "block";
+                //隐藏菜单之后, 设置触控穿透悬浮窗口
+                setWindowTouch(true);
+            } else {
+                menu.style.display = "none";
+                //显示菜单之后, 设置触控不可穿透悬浮窗口
+                setWindowTouch(false);
+            }
+        });
+
+
+
+setButtonGif("https://media3.giphy.com/media/RMwgs5kZqkRyhF24KK/giphy.gif")
+</script>
+
 </body>
+
 </html>
