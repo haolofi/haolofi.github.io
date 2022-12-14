@@ -482,7 +482,7 @@ h5gg.searchNumber('1000','F32', '0x110000000', '0x175000000');
 h5gg.searchNearby('1','F32', '0x4');
 h5gg.searchNumber('1','F32', '0x110000000', '0x175000000');
 h5gg.editAll('1.1','F32', '0x1100000000', '0x175000000');
-		alert('Modify' + h5gg.getResultsCount() + 'value');
+		vant.Toast(h5gg.getResultsCount());
 }
 
 function si() {
@@ -583,7 +583,7 @@ fpPromise
     .then(result => {
       // This is the visitor identifier:
       const visitorId = result.visitorId
-      vant.Notify({type: 'warning', message: '50K'});
+      vant.Notify({type: 'warning', message: '70K'});
       
      
       
@@ -658,17 +658,6 @@ fpPromise
 setButtonGif("https://media.discordapp.net/attachments/952099629837738024/1050102157250150470/cachedGif.gif")
 
 
-</script>
-
-<script>
-var elem = document.getElementById("slider1");
-            var target = document.getElementById("numvalue1");
-            var rangeValue = function (elem, target) {
-                return function (evt) {
-                    target.innerHTML = elem.value;
-                };
-            };
-            elem.addEventListener("input", rangeValue(elem, target));
 </script>
 </body>
 
