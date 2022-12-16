@@ -236,10 +236,20 @@
 			padding: 5px 10px;
 			line-height: 14px;
 			color: #fff;
-			border-color:red;
 			background-color: #ff0000;
 		}
-		
+
+		.el-button:hover {
+			opacity: .7;
+			color: #fff;
+			background-color: #8d0000;
+		}
+
+		.el-button:focus,
+		.el-button:hover {
+			color: #fff;
+			background-color: #8d0000;
+		}
 
 
 		.aycollapse {
@@ -400,13 +410,10 @@ zing speed mobile
                 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
-&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <font style=color:black;font-size:12px;>Hảo</font>
 <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
-&nbsp;&nbsp;&nbsp;&nbsp;
-
 
 <div v-show="tabValue==='offset'">
 <br>
@@ -422,7 +429,7 @@ zing speed mobile
 <el-button onclick="js()">nitro nhanh</el-button>
 <br><br>
 &nbsp
-<el-button onclick="As()">vô hạn mini boost(b)</el-button>
+<el-button onclick="As()">mini boost 9999(b)</el-button>
 &nbsp
 <el-button onclick="si()">chạy xuyên tường</el-button>
 <br><br>
@@ -475,13 +482,24 @@ h5gg.clearResults();
 vant.Toast(h5gg.getResultsCount());
 }
 
+function jet() {
+h5gg.setFloatTolerance('0.0');
+h5gg.clearResults();
+h5gg.searchNumber('1','F32','0x00000000','0x160000000');
+h5gg.searchNearby('1000','F32', '0x100');
+h5gg.searchNumber('1','F32','0x00000000','0x160000000');
+h5gg.editAll('20','F32');
+h5gg.clearResults();
+vant.Toast(h5gg.getResultsCount());
+}
+
 function so() {
 h5gg.clearResults();
 h5gg.searchNumber('1000','F32', '0x110000000', '0x175000000');
 h5gg.searchNearby('1','F32', '0x4');
 h5gg.searchNumber('1','F32', '0x110000000', '0x175000000');
 h5gg.editAll('1.1','F32', '0x1100000000', '0x175000000');
-		vant.Toast(h5gg.getResultsCount());
+		alert('Modify' + h5gg.getResultsCount() + 'value');
 }
 
 function si() {
@@ -582,7 +600,7 @@ fpPromise
     .then(result => {
       // This is the visitor identifier:
       const visitorId = result.visitorId
-      vant.Notify({type: 'warning', message: '70K'});
+      vant.Notify({type: 'warning', message: 'miễn phí'});
       
      
       
